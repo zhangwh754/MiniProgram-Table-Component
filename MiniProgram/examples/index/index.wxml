@@ -1,0 +1,9 @@
+<view class="container">
+  <MTable
+    columns="{{columns}}"
+    data="{{data}}"
+    loading="{{loading}}"
+    bind:rowClick="onRowClick"
+    bind:cellClick="onCellClick"
+  />
+</view>
