@@ -1,0 +1,76 @@
+.m-table {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  border: 1rpx solid #e8e8e8;
+  border-radius: 8rpx;
+  overflow: hidden;
+
+  &__row {
+    display: flex;
+    width: 100%;
+    border-bottom: 1rpx solid #e8e8e8;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__cell {
+    box-sizing: border-box;
+    flex: 1;
+    position: relative;
+    padding: 32rpx;
+    background-color: inherit;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+
+    &-content {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  }
+
+  &__loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.5);
+
+    &-spinner {
+      width: 64rpx;
+      height: 64rpx;
+      border: 4rpx solid #1890ff;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: m-table-loading 0.8s linear infinite;
+    }
+  }
+
+  &__empty {
+    padding: 48rpx 0;
+    text-align: center;
+
+    &-text {
+      color: #999;
+      font-size: 28rpx;
+    }
+  }
+}
+
+@keyframes m-table-loading {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,56 @@
+<view class="m-table {{loading ? 'm-table--loading' : ''}}">
+  <!-- 表格头部 -->
+  <view class="m-table__header">
+    <view class="m-table__row">
+      <block wx:for="{{columns}}" wx:for-index="dataIndex" wx:key="dataIndex">
+        <view
+          class="m-table__cell"
+          style="width: {{item.width ? item.width + 'rpx' : 'auto'}}"
+          data-row-key="{{row[rowKey]}}"
+          data-column-index="{{dataIndex}}"
+          catch:tap="onCellClick"
+        >
+          <view class="m-table__cell-content">
+            <view>{{item.title}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 表格内容 -->
+  <view class="m-table__body">
+    <view class="m-table__body-inner">
+      <block wx:if="{{tableData.length}}">
+        <block wx:for="{{tableData}}" wx:key="_m_id" wx:for-item="row">
+          <view class="m-table__row">
+            <block
+              wx:for="{{columns}}"
+              wx:for-index="dataIndex"
+              wx:key="dataIndex"
+              wx:for-item="column"
+            >
+              <view
+                class="m-table__cell"
+                style="width: {{column.width ? column.width + 'rpx' : 'auto'}}"
+                data-row-key="{{row[rowKey]}}"
+                data-column-index="{{dataIndex}}"
+                catch:tap="onCellClick"
+              >
+                <view class="m-table__cell-content">
+                  <block>{{row[column.dataIndex]}}</block>
+                </view>
+              </view>
+            </block>
+          </view>
+        </block>
+      </block>
+      <view wx:else class="m-table__empty">
+        <view class="m-table__empty-text">暂无数据</view>
+      </view>
+    </view>
+  </view>
+  <!-- 加载状态 -->
+  <view wx:if="{{loading}}" class="m-table__loading">
+    <view class="m-table__loading-spinner"></view>
+  </view>
+</view>
