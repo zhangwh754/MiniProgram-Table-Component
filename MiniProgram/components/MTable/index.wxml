@@ -37,7 +37,16 @@
                 catch:tap="onCellClick"
               >
                 <view class="m-table__cell-content">
-                  <block>{{row[column.dataIndex]}}</block>
+                  <block wx:if="{{column.generic}}">
+                    <CustomRender
+                      data-index="{{index}}"
+                      column-index="{{dataIndex}}"
+                      row="{{row}}"
+                      column="{{column}}"
+                      bind:renderClick="onRenderClick"
+                    ></CustomRender>
+                  </block>
+                  <block wx:else>{{row[column.dataIndex]}}</block>
                 </view>
               </view>
             </block>

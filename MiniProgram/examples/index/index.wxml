@@ -3,7 +3,8 @@
     columns="{{columns}}"
     data="{{data}}"
     loading="{{loading}}"
-    bind:rowClick="onRowClick"
+    generic:CustomRender="Column"
     bind:cellClick="onCellClick"
+    bind:renderClick="onRenderClick"
   />
 </view>

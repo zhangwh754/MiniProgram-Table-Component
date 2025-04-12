@@ -71,5 +71,9 @@ Component({
 
       this.triggerEvent("cellClick", { rowKey, rowData, column });
     },
+
+    onRenderClick(e: WechatMiniprogram.CustomEvent) {
+      this.triggerEvent("renderClick", e.detail);
+    },
   },
 });

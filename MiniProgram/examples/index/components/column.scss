@@ -1,0 +1,27 @@
+/* examples/index/components/table.wxss */
+.custom-component {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+
+  button {
+    flex: 1;
+    min-width: 120rpx;
+    font-size: 28rpx;
+    padding: 12rpx 24rpx;
+
+    &:first-child {
+      background-color: #1890ff;
+      color: #fff;
+    }
+
+    &:last-child {
+      background-color: #ff4d4f;
+      color: #fff;
+    }
+
+    &[disabled] {
+      background-color: #bfbfbf;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "MTable": "../../components/MTable/index"
+    "MTable": "../../components/MTable/index",
+    "Column": "./components/column"
   }
 }
