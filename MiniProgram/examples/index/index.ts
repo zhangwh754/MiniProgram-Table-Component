@@ -5,15 +5,22 @@ Page({
         title: "姓名",
         dataIndex: "name",
         width: 100,
+        cellStyle: function (row: any) {
+          if (row.id !== "2") {
+            return "color: #1890ff; text-decoration: underline;text-underline-offset: 4rpx;";
+          } else return "";
+        },
       },
       {
         title: "年龄",
         dataIndex: "age",
         width: 80,
+        cellStyle: "color: orange",
       },
       {
         title: "地址",
         dataIndex: "address",
+        headerStyle: "color: red;font-weight:bold;font-size:40rpx",
         width: 200,
       },
       {
@@ -36,6 +43,12 @@ Page({
     console.log("rowKey", rowKey);
     console.log("rowData", rowData);
     console.log("column", column);
+  },
+
+  onHeaderCellClick(e: TouchEventType) {
+    const { column } = e.detail;
+
+    console.log("表头点击", column);
   },
 
   onRenderClick(e: TouchEventType) {

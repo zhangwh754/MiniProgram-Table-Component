@@ -6,12 +6,11 @@
         <view
           class="m-table__cell"
           style="width: {{item.width ? item.width + 'rpx' : 'auto'}}"
-          data-row-key="{{row[rowKey]}}"
           data-column-index="{{dataIndex}}"
-          catch:tap="onCellClick"
+          catch:tap="onHeaderCellClick"
         >
           <view class="m-table__cell-content">
-            <view>{{item.title}}</view>
+            <view style="{{item.headerStyle}}">{{item.title}}</view>
           </view>
         </view>
       </block>
@@ -46,7 +45,12 @@
                       bind:renderClick="onRenderClick"
                     ></CustomRender>
                   </block>
-                  <block wx:else>{{row[column.dataIndex]}}</block>
+                  <block wx:else>
+                    <view
+                      style="{{renderedCells[row._m_id + '_' + column.dataIndex]}}"
+                      >{{row[column.dataIndex]}}</view
+                    >
+                  </block>
                 </view>
               </view>
             </block>

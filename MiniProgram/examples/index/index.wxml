@@ -4,6 +4,7 @@
     data="{{data}}"
     loading="{{loading}}"
     generic:CustomRender="Column"
+    bind:headerCellClick="onHeaderCellClick"
     bind:cellClick="onCellClick"
     bind:renderClick="onRenderClick"
   />
