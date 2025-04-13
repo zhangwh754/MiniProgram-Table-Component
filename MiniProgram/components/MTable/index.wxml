@@ -1,7 +1,19 @@
+<wxs module="utils" src="./wxs/utils.wxs" />
+
 <view class="m-table {{loading ? 'm-table--loading' : ''}}">
   <!-- 表格头部 -->
   <view class="m-table__header">
     <view class="m-table__row">
+      <block wx:if="{{selectable}}">
+        <view class="m-table__cell" style="width: 80rpx">
+          <view class="m-table__cell-content">
+            <MCheckbox
+              checkStatus="{{selectedRowKeys.length === 0 ? 'none' : selectedRowKeys.length === tableData.length ? 'all' : 'part'}}"
+              bind:change="onCheckAll"
+            />
+          </view>
+        </view>
+      </block>
       <block wx:for="{{columns}}" wx:for-index="dataIndex" wx:key="dataIndex">
         <view
           class="m-table__cell"
@@ -22,6 +34,17 @@
       <block wx:if="{{tableData.length}}">
         <block wx:for="{{tableData}}" wx:key="_m_id" wx:for-item="row">
           <view class="m-table__row">
+            <block wx:if="{{selectable}}">
+              <view class="m-table__cell" style="width: 80rpx">
+                <view class="m-table__cell-content">
+                  <MCheckbox
+                    checked="{{utils.getCheckStatus(row._m_id, selectedRowKeys)}}"
+                    data-row-key="{{row._m_id}}"
+                    bind:change="onCheckboxChange"
+                  />
+                </view>
+              </view>
+            </block>
             <block
               wx:for="{{columns}}"
               wx:for-index="dataIndex"

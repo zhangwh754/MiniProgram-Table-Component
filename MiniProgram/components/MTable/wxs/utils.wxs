@@ -1,0 +1,6 @@
+function getCheckStatus(rowKey, selectedRowKeys) {
+  if (selectedRowKeys.length === 0) return false;
+  return selectedRowKeys.indexOf(rowKey) > -1;
+}
+
+module.exports = { getCheckStatus: getCheckStatus };

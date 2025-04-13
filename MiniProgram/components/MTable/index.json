@@ -1,6 +1,8 @@
 {
   "component": true,
-  "usingComponents": {},
+  "usingComponents": {
+    "MCheckbox": "./components/MCheckbox/index"
+  },
   "componentGenerics": {
     "CustomRender": true
   }

@@ -7,5 +7,10 @@
     bind:headerCellClick="onHeaderCellClick"
     bind:cellClick="onCellClick"
     bind:renderClick="onRenderClick"
+    selectable="{{true}}"
+    selectedRowKeys="{{selectedRowKeys}}"
+    bind:selectChange="onSelectChange"
   />
 </view>
+
+<view>{{selectedRowKeys}}</view>

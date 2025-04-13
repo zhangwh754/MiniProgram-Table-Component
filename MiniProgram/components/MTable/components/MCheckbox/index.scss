@@ -1,0 +1,31 @@
+.checkbox-container {
+  .checkbox {
+    display: flex;
+    width: 36rpx;
+    height: 36rpx;
+    border: 1rpx solid #ccc;
+    border-radius: 4rpx;
+
+    .fill {
+      margin: 8rpx;
+      flex: 1;
+      border-radius: 4rpx;
+      overflow: hidden;
+    }
+
+    .checked {
+      margin: 0;
+      border-radius: 0;
+      background: no-repeat
+        url("https://pic1.imgdb.cn/item/678756e7d0e0a243d4f4710b.png");
+      background-size: 100%;
+    }
+    .none {
+      background-color: transparent;
+    }
+    .part {
+      background-clip: content-box;
+      background-color: #007aff;
+    }
+  }
+}

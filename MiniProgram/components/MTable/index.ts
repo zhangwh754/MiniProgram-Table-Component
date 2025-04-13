@@ -24,6 +24,11 @@ interface TableData {
   _m_id: string | number;
 }
 
+interface SelectEvent {
+  selectedRowKeys: (string | number)[];
+  selectedRows: TableData[];
+}
+
 Component({
   properties: {
     columns: {
@@ -41,6 +46,14 @@ Component({
     rowKey: {
       type: String,
       value: "id",
+    },
+    selectable: {
+      type: Boolean,
+      value: false,
+    },
+    selectedRowKeys: {
+      type: Array,
+      value: [] as string[],
     },
   },
 
@@ -105,6 +118,46 @@ Component({
 
     onRenderClick(e: WechatMiniprogram.CustomEvent) {
       this.triggerEvent("renderClick", e.detail);
+    },
+
+    onCheckboxChange(e: WechatMiniprogram.CustomEvent) {
+      const { isChecked } = e.detail;
+      const { rowKey } = e.currentTarget.dataset;
+      const selectedKeys = [...this.data.selectedRowKeys];
+
+      if (isChecked) {
+        selectedKeys.push(rowKey);
+      } else {
+        const index = selectedKeys.indexOf(rowKey);
+        if (index > -1) {
+          selectedKeys.splice(index, 1);
+        }
+      }
+
+      const selectedRows = this.data.tableData.filter(
+        (item) => selectedKeys.indexOf(item._m_id) > -1,
+      );
+
+      this.setData({ selectedRowKeys: selectedKeys });
+      this.triggerEvent("selectChange", {
+        selectedRowKeys: selectedKeys,
+        selectedRows,
+      });
+    },
+
+    onCheckAll(e: WechatMiniprogram.CustomEvent) {
+      const { isChecked } = e.detail;
+      const selectedKeys = isChecked
+        ? this.data.tableData.map((item) => item._m_id)
+        : [];
+
+      const selectedRows = isChecked ? [...this.data.tableData] : [];
+
+      this.setData({ selectedRowKeys: selectedKeys });
+      this.triggerEvent("selectChange", {
+        selectedRowKeys: selectedKeys,
+        selectedRows,
+      });
     },
   },
 });

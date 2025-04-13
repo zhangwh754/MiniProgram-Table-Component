@@ -35,6 +35,7 @@ Page({
       { id: "3", name: "王五", age: 28, address: "广州市天河区" },
     ],
     loading: false,
+    selectedRowKeys: ["2"],
   },
 
   onCellClick(e: TouchEventType) {
@@ -81,5 +82,13 @@ Page({
         showCancel: false,
       });
     }
+  },
+
+  onSelectChange(e: TouchEventType) {
+    const { selectedRowKeys, selectedRows } = e.detail;
+
+    this.setData({
+      selectedRowKeys: selectedRowKeys,
+    });
   },
 });

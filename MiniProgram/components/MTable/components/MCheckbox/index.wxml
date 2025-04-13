@@ -1,0 +1,18 @@
+<view class="checkbox-container">
+  <block wx:if="{{checkStatus}}">
+    <view wx:if="{{checkStatus == 'all'}}" class="checkbox" bind:tap="onToggleCheckbox">
+      <view class="fill checked"></view
+    ></view>
+    <view wx:if="{{checkStatus == 'none'}}" class="checkbox" bind:tap="onToggleCheckbox">
+      <view class="fill none"></view
+    ></view>
+    <view wx:if="{{checkStatus == 'part'}}" class="checkbox" bind:tap="onToggleCheckbox">
+      <view class="fill part"></view
+    ></view>
+  </block>
+  <block wx:else>
+    <view class="checkbox" bind:tap="onToggleCheckbox">
+      <view class="fill {{checked ? 'checked' : 'none'}}"></view>
+    </view>
+  </block>
+</view>
