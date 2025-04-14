@@ -1,0 +1,9 @@
+<!--examples/index/components/table.wxml-->
+<view class="custom-component">
+  <button disabled="{{row.id === '2'}}" data-type="edit" catch:tap="onAction">
+    编辑
+  </button>
+  <button disabled="{{row.id === '2'}}" data-type="remove" catch:tap="onAction">
+    删除
+  </button>
+</view>

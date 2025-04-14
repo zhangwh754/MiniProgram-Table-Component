@@ -1,5 +1,5 @@
 {
-  "pages": ["examples/index/index"],
+  "pages": ["examples/index/index", "examples/index2/index"],
   "window": {
     "navigationBarTitleText": "Demo"
   },

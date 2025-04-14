@@ -4,6 +4,18 @@
   "setting": {
     "compileHotReLoad": true
   },
-  "condition": {},
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "examples/index2/index",
+          "pathName": "examples/index2/index",
+          "query": "",
+          "scene": null,
+          "launchMode": "default"
+        }
+      ]
+    }
+  },
   "libVersion": "3.7.12"
 }

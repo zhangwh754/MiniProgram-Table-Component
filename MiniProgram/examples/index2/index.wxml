@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="table-panel">
+    <MTable
+      columns="{{columns}}"
+      data="{{data}}"
+      loading="{{loading}}"
+      generic:CustomRender="Column"
+      bind:headerCellClick="onHeaderCellClick"
+      bind:cellClick="onCellClick"
+      bind:renderClick="onRenderClick"
+      selectable="{{false}}"
+      MHeaderClass="header-class"
+      MRowClass="row-class"
+    />
+  </view>
+</view>
+
+<view>选中行的ids：[{{selectedRowKeys}}]</view>
