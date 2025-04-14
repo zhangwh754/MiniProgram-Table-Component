@@ -3,9 +3,9 @@
 <view class="m-table {{loading ? 'm-table--loading' : ''}}">
   <!-- 表格头部 -->
   <view class="m-table__header">
-    <view class="m-table__row">
+    <view class="m-table__row {{MHeaderClass}}">
       <block wx:if="{{selectable}}">
-        <view class="m-table__cell" style="width: 80rpx">
+        <view class="m-table__cell m-table__cell-checked">
           <view class="m-table__cell-content">
             <MCheckbox
               checkStatus="{{selectedRowKeys.length === 0 ? 'none' : selectedRowKeys.length === tableData.length ? 'all' : 'part'}}"
@@ -33,9 +33,9 @@
     <view class="m-table__body-inner">
       <block wx:if="{{tableData.length}}">
         <block wx:for="{{tableData}}" wx:key="_m_id" wx:for-item="row">
-          <view class="m-table__row">
+          <view class="m-table__row {{MRowClass}}">
             <block wx:if="{{selectable}}">
-              <view class="m-table__cell" style="width: 80rpx">
+              <view class="m-table__cell m-table__cell-checked">
                 <view class="m-table__cell-content">
                   <MCheckbox
                     checked="{{utils.getCheckStatus(row._m_id, selectedRowKeys)}}"

@@ -20,7 +20,7 @@ Page({
       {
         title: "地址",
         dataIndex: "address",
-        headerStyle: "color: red;font-weight:bold;font-size:40rpx",
+        headerStyle: "color: red;font-weight:bold;",
         width: 200,
       },
       {
@@ -30,9 +30,11 @@ Page({
       },
     ],
     data: [
-      { id: "1", name: "张三", age: 25, address: "北京市朝阳区" },
+      { id: "1", name: "张三", age: 25, address: "北京市朝阳区广渠路" },
       { id: "2", name: "李四", age: 30, address: "上海市浦东新区世纪大道" },
       { id: "3", name: "王五", age: 28, address: "广州市天河区" },
+      { id: "4", name: "赵六", age: 11, address: "深圳市福田区竹子林" },
+      { id: "5", name: "丁七", age: 99, address: "北京市海淀区成府路" },
     ],
     loading: false,
     selectedRowKeys: ["2"],
@@ -64,8 +66,12 @@ Page({
             const newData = this.data.data.filter(
               (item) => item.id !== rowData.id,
             );
+            const newSelectedRowKeys = this.data.selectedRowKeys.filter(
+              (item) => item !== rowData.id,
+            );
             this.setData({
               data: newData,
+              selectedRowKeys: newSelectedRowKeys,
             });
             wx.showToast({
               title: "删除成功",

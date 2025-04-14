@@ -36,6 +36,9 @@
 | ------          | ----    | ------ | ---- | ----                 |
 | selectable      | Boolean | false  | 否   | 是否启用选择功能     |
 | selectedRowKeys | Array   | []     | 否   | 选中行的 key 数组    |
+| ------          | ----    | ------ | ---- | ----                 |
+| MHeaderClass    | String  | ---    | 否   | 表头的自定义样式类   |
+| MRowClass       | String  | ---    | 否   | 表体的自定义样式类   |
 
 #### columns 列定义
 

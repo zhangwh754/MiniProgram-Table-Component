@@ -1,9 +1,8 @@
 .m-table {
+  box-sizing: border-box;
   position: relative;
   width: 100%;
   background-color: #fff;
-  border: 1rpx solid #e8e8e8;
-  border-radius: 8rpx;
   overflow: hidden;
 
   &__row {
@@ -20,13 +19,19 @@
     box-sizing: border-box;
     flex: 1;
     position: relative;
-    padding: 32rpx;
     background-color: inherit;
 
     &-content {
       display: flex;
       align-items: center;
       justify-content: flex-start;
+    }
+
+    &-checked {
+      width: 50rpx;
+      padding: 0 4rpx;
+      flex-grow: 0;
+      flex-shrink: 0;
     }
   }
 

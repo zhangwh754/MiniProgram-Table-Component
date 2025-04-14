@@ -30,6 +30,10 @@ interface SelectEvent {
 }
 
 Component({
+  options: {
+    addGlobalClass: true, // 启用组件样式共享
+  },
+
   properties: {
     columns: {
       type: Array,
@@ -54,6 +58,12 @@ Component({
     selectedRowKeys: {
       type: Array,
       value: [] as string[],
+    },
+    MHeaderClass: {
+      type: String,
+    },
+    MRowClass: {
+      type: String,
     },
   },
 
