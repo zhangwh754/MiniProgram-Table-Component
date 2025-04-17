@@ -14,5 +14,3 @@
     />
   </view>
 </view>
-
-<view>选中行的ids：[{{selectedRowKeys}}]</view>

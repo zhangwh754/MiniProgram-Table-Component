@@ -1,13 +1,12 @@
 .m-table-container {
   position: relative;
   width: 100%;
-  height: 800rpx;
   background: #fff;
   overflow: hidden;
 
   .m-table-scroll {
     width: 100%;
-    height: 100%;
+    height: auto;
   }
 
   .m-table-wrapper {
@@ -20,7 +19,6 @@
 
     &__content {
       position: relative;
-      height: 100%;
       width: 200rpx;
       border-right: 1rpx solid #e8e8e8;
     }

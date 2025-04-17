@@ -1,8 +1,8 @@
 .checkbox-container {
   .checkbox {
     display: flex;
-    width: 36rpx;
-    height: 36rpx;
+    width: 32rpx;
+    height: 32rpx;
     border: 1rpx solid #ccc;
     border-radius: 4rpx;
 
@@ -19,6 +19,7 @@
       background: no-repeat
         url("https://pic1.imgdb.cn/item/678756e7d0e0a243d4f4710b.png");
       background-size: 100%;
+      border: none;
     }
     .none {
       background-color: transparent;

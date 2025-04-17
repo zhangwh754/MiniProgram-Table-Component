@@ -11,8 +11,8 @@
           "name": "examples/index2/index",
           "pathName": "examples/index2/index",
           "query": "",
-          "scene": null,
-          "launchMode": "default"
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

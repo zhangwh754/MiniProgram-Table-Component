@@ -25,7 +25,7 @@ Page({
       },
       {
         title: "操作",
-        width: 300,
+        width: 500,
         generic: true,
       },
     ],

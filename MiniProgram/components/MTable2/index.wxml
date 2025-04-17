@@ -1,5 +1,5 @@
 <view class="m-table-container">
-  <scroll-view class=".m-table-scroll" scroll-x="{{true}}" scroll-y="{{true}}">
+  <scroll-view class="m-table-scroll" scroll-x="{{true}}" scroll-y="{{false}}">
     <view class="m-table {{loading ? 'm-table--loading' : ''}}">
       <!-- 表格头部 -->
       <view class="m-table__header">
